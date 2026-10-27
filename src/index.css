@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   BAW Global CSS — Luxury Fashion Brand
+   ============================================================ */
+
+:root {
+  --baw-black: #5B4632;
+  --baw-mocha: #5B4632;
+  --baw-gold: #F4D9A0;
+  --baw-champagne: #F4D9A0;
+  --baw-amber: #C8792C;
+  --baw-ivory: #FAF7F0;
+  --baw-cream: #FAF7F0;
+  --baw-neutral: #F1EBDD;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7.25rem;
+}
+
+body {
+  background-color: var(--baw-ivory);
+  color: var(--baw-black);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ============================================================
+   Scrollbar
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #F4D9A0;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F4D9A0;
+}
+
+/* ============================================================
+   Selection
+   ============================================================ */
+::selection {
+  background: rgba(244, 217, 160, 0.45);
+  color: #5B4632;
+}
+
+/* ============================================================
+   Gold shimmer text
+   ============================================================ */
+.text-shimmer {
+  background: linear-gradient(
+    120deg,
+    #5B4632 0%,
+    #F4D9A0 40%,
+    #5B4632 55%,
+    #F4D9A0 70%,
+    #5B4632 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ============================================================
+   Logo metallic effect
+   ============================================================ */
+.logo-metallic {
+  filter: drop-shadow(0 0 8px rgba(91, 70, 50, 0.16));
+}
+
+/* ============================================================
+   Card glass effect
+   ============================================================ */
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(244, 217, 160, 0.72);
+}
+
+/* ============================================================
+   Gold divider
+   ============================================================ */
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #F4D9A0, transparent);
+}
+
+/* ============================================================
+   Reduced motion — respect user preference
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .text-shimmer {
+    animation: none;
+    background: #5B4632;
+  }
+}
+
+/* ============================================================
+   Hide number input arrows
+   ============================================================ */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* ============================================================
+   Focus ring
+   ============================================================ */
+*:focus-visible {
+  outline: 2px solid #5B4632;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Keep utility classes readable while champagne stays an accent color. */
+.text-baw-gold {
+  color: #5B4632 !important;
+}
+
+.hover\:text-baw-gold:hover {
+  color: #5B4632 !important;
+}
+
+.bg-baw-gold {
+  background-color: #5B4632 !important;
+}
+
+.hover\:bg-baw-gold:hover {
+  background-color: #5B4632 !important;
+}
+
+.bg-baw-gold.text-baw-black {
+  color: #FAF7F0 !important;
+}
+
+.bg-white {
+  background-color: #FFFCF6 !important;
+}
